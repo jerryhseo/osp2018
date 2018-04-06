@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.kisti.osp.spyglass.model.ScienceApp">
+		<field name="uuid" type="String" />
+		<field name="scienceAppId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="version" type="String" />
+		<field localized="true" name="title" type="String" />
+		<field localized="true" name="description" type="String" />
+		<field name="previousVersionId" type="long" />
+		<field name="iconId" type="long" />
+		<field localized="true" name="manual" type="String" />
+		<field name="exeFileName" type="String" />
+		<field name="appType" type="String" />
+		<field name="runType" type="String" />
+		<field name="openStatus" type="String" />
+		<field name="status" type="int" />
+		<field name="recentModifierId" type="long" />
+		<field name="maxCpus" type="int" />
+		<field name="defaultCpus" type="int" />
+		<field name="statusDate" type="Date" />
+		<field name="openLevel" type="int" />
+		<field name="license" type="String" />
+		<field name="srcFileName" type="String" />
+	</model>
+	<model name="com.kisti.osp.spyglass.model.ScienceAppInputPorts">
+		<field name="scienceAppId" type="long" />
+		<field name="samplePath" type="String" />
+		<field name="inputPorts" type="String" />
+	</model>
+	<model name="com.kisti.osp.spyglass.model.ScienceAppLayout">
+		<field name="scienceAppId" type="long" />
+		<field name="layout" type="String" />
+	</model>
+	<model name="com.kisti.osp.spyglass.model.ScienceAppLogPorts">
+		<field name="scienceAppId" type="long" />
+		<field name="logPorts" type="String" />
+	</model>
+	<model name="com.kisti.osp.spyglass.model.ScienceAppManager">
+		<field name="scienceAppManagerId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="scienceAppId" type="long" />
+		<field name="managerId" type="long" />
+	</model>
+	<model name="com.kisti.osp.spyglass.model.ScienceAppOutputPorts">
+		<field name="scienceAppId" type="long" />
+		<field name="outputPorts" type="String" />
+	</model>
+	<model name="com.kisti.osp.spyglass.model.ScienceAppWorkflow">
+		<field name="scienceAppId" type="long" />
+		<field name="definition" type="String" />
+	</model>
+</model-hints>

@@ -8,7 +8,6 @@ dependencies {
 	compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
 
 	compileOnly project(":modules:OSPSpyGlass:OSPSpyGlass-api")
-	compileOnly project(":modules:OSPServerConfig:OSPServerConfig-api")
 	compileOnly project(":modules:OSPUtil:OSPUtil-api")
 }
 

@@ -18,7 +18,6 @@ dependencies {
 	
 	compileOnly group: "com.liferay", name: "com.liferay.portal.configuration.metatype", version:"2.0.0"
 	
-	compileOnly project(":modules:OSPServerConfig:OSPServerConfig-api")
 	compileOnly project(":modules:OSPIcebreaker:OSPIcebreaker-api")
 	compileOnly project(":modules:OSPSpyGlass:OSPSpyGlass-api")
 	compileOnly project(":modules:OSPIcecap:OSPIcecap-api")
