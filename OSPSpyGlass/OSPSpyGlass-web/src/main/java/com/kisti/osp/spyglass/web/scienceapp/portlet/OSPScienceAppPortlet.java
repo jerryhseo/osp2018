@@ -51,10 +51,10 @@ public class OSPScienceAppPortlet extends MVCPortlet {
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse)
 			throws IOException, PortletException {
 		
-		String repoType = "input";
+		String repoType = "USER_HOME";
 		OSPRepositoryTypes type = OSPRepositoryTypes.valueOf(repoType.toUpperCase());
 		System.out.println("OSPRepositoryTypes: "+type);
-		System.out.println("OSPRepositoryTypes Comparison: "+ (type == OSPRepositoryTypes.INPUT) );
+		System.out.println("OSPRepositoryTypes Comparison: "+ (type == OSPRepositoryTypes.USER_HOME) );
 		
 		super.doView(renderRequest, renderResponse);
 	}
