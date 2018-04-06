@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd">
+
+<service-builder package-path="com.kisti.osp.icebug">
+	<namespace>icebug</namespace>
+	<entity local-service="true" name="Paper" remote-service="true" uuid="true" trash-enabled="true" uuid-accessor="true">
+
+		<column name="paperId" primary="true" type="long" />
+
+		<column name="groupId" type="long" />
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- References -->
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetTag" />
+	</entity>
+	<entity name="Curriculum" local-service="true" uuid="true"
+		uuid-accessor="true" trash-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="curriculumId" type="long" primary="true"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="title" type="String" localized="true"></column>
+        <column name="description" type="String" localized="true"></column>
+        <column name="languages" type="String"></column>
+	</entity>
+	<entity name="Mannual" uuid="true" uuid-accessor="true" trash-enabled="true" local-service="true"></entity>
+    <entity name="Chapter" local-service="true">
+        <column name="chapterId" type="long" primary="true"></column>
+        <column name="userId" type="long"></column>
+        <column name="title" type="String" localized="true"></column>
+        <column name="description" type="String" localized="true"></column>
+    </entity>
+    <entity name="Section" local-service="true">
+        <column name="sectionId" type="long" primary="true"></column>
+        <column name="userId" type="long"></column>
+        <column name="title" type="String" localized="true"></column>
+        <column name="description" type="String" localized="true"></column>
+    </entity>
+    
+    <!-- Layout JSON Definition
+    	[
+    		{
+    			columnId: String,
+    			portletName: String,
+    			portletVersion: String,
+    			initData: OSP.InputData,
+    			width: int,
+    			height: int,
+    		},
+    		...........
+    	] 
+     -->
+     <!--
+     	{
+     		type_: URL, fileContent, Context, File, Folder, Ext, DLEntryID
+     		parent_:
+     		name_:
+     		context_:
+     		url_:
+     		id_:
+     	} 
+      -->
+    <entity name="SectionContent" local-service="true">
+        <column name="sectionId" type="long" primary="true"></column>
+        <column name="language" type="String" primary="true"></column>
+        <column name="content" type="String"></column>
+    </entity>
+    <entity name="ChapterContent" local-service="true">
+        <column name="chapterId" type="long" primary="true"></column>
+        <column name="language" type="String" primary="true"></column>
+        <column name="content" type="String"></column>
+    </entity>
+    <entity name="CurriculumContent" local-service="true">
+        <column name="curriculumId" type="long" primary="true"></column>
+        <column name="language" type="String" primary="true"></column>
+        <column name="content" type="String"></column>
+    </entity>
+</service-builder>

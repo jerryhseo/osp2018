@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean class="com.kisti.osp.icebug.service.impl.PaperLocalServiceImpl" id="com.kisti.osp.icebug.service.PaperLocalService" />
+	<bean class="com.kisti.osp.icebug.service.impl.PaperServiceImpl" id="com.kisti.osp.icebug.service.PaperService" />
+	<bean class="com.kisti.osp.icebug.service.persistence.impl.PaperPersistenceImpl" id="com.kisti.osp.icebug.service.persistence.PaperPersistence" parent="basePersistence" />
+</beans>

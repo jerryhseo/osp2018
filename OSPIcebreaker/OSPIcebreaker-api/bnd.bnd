@@ -1,0 +1,12 @@
+Bundle-Name: OSP Icebreaker API
+Bundle-SymbolicName: com.kisti.osp.icebreaker.api
+Bundle-Version: 1.0.0
+Export-Package: \
+	com.kisti.osp.icebreaker.exception,\
+	com.kisti.osp.icebreaker.model,\
+	com.kisti.osp.icebreaker.service,\
+	com.kisti.osp.icebreaker.service.persistence,\
+	com.kisti.osp.icebreaker.scheduler.search,\
+	com.kisti.osp.icebreaker.permission,\
+	com.kisti.osp.icebreaker.job.constant
+-includeresource: META-INF/service.xml=../OSPIcebreaker-service/service.xml

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="OSPIcecap.model.DataCollection">
+		<field name="uuid" type="String" />
+		<field name="name" type="String" />
+		<field name="version" type="String" />
+		<field localized="true" name="title" type="String" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="description" type="long" />
+		<field name="status" type="int" />
+		<field name="accessMethod" type="String" />
+		<field name="collectionId" type="long" />
+		<field name="typeId" type="long" />
+	</model>
+	<model name="OSPIcecap.model.DataCollectionLayout">
+		<field name="collectionId" type="long" />
+		<field name="layout" type="String" />
+	</model>
+	<model name="OSPIcecap.model.DataEntry">
+		<field name="entryId" type="long" />
+		<field name="collectionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field localized="true" name="comments" type="String" />
+	</model>
+	<model name="OSPIcecap.model.DataType">
+		<field name="uuid" type="String" />
+		<field name="typeId" type="long" />
+		<field name="name" type="String" />
+		<field name="version" type="String" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="samplePath" type="String" />
+		<field name="status" type="int" />
+		<field localized="true" name="description" type="String" />
+	</model>
+	<model name="OSPIcecap.model.DataTypeAnalyzerLink">
+		<field name="linkId" type="long" />
+		<field name="typeId" type="long" />
+		<field name="analyzerId" type="long" />
+	</model>
+	<model name="OSPIcecap.model.DataTypeStructure">
+		<field name="typeId" type="long" />
+		<field name="structure" type="String" />
+	</model>
+</model-hints>

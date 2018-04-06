@@ -1,0 +1,9 @@
+Bundle-Name: OSPIcebug-api
+Bundle-SymbolicName: com.kisti.osp.icebug.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.kisti.osp.icebug.exception,\
+	com.kisti.osp.icebug.model,\
+	com.kisti.osp.icebug.service,\
+	com.kisti.osp.icebug.service.persistence
+-includeresource: META-INF/service.xml=../OSPIcebug-service/service.xml

@@ -1,0 +1,4 @@
+Bundle-Name: OSPWorkflowEditor-portlet
+Bundle-SymbolicName: com.kisti.osp.zodiac.workflow.editor
+Bundle-Version: 1.0.0
+Export-Package: com.kisti.osp.zodiac.workflow.editor.constants

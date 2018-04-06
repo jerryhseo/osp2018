@@ -1,0 +1,5 @@
+javax.portlet.display-name.OSPTest=OSPTest JSP
+javax.portlet.keywords.OSPTest=OSPTest,jsp
+javax.portlet.short-title.OSPTest=OSPTest JSP
+javax.portlet.title.OSPTest=OSPTest JSP Portlet
+OSPTest.caption=Hello from OSPTest JSP!

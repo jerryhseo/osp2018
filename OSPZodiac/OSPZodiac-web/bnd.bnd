@@ -1,0 +1,4 @@
+Bundle-Name: OSPZodiac-web
+Bundle-SymbolicName: com.kisti.osp.zodiac.web
+Bundle-Version: 1.0.0
+Export-Package: com.kisti.osp.zodiac.web.constants

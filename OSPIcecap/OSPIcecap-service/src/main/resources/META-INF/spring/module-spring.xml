@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean class="OSPIcecap.service.impl.DataCollectionLocalServiceImpl" id="OSPIcecap.service.DataCollectionLocalService" />
+	<bean class="OSPIcecap.service.impl.DataCollectionServiceImpl" id="OSPIcecap.service.DataCollectionService" />
+	<bean class="OSPIcecap.service.persistence.impl.DataCollectionPersistenceImpl" id="OSPIcecap.service.persistence.DataCollectionPersistence" parent="basePersistence" />
+	<bean class="OSPIcecap.service.impl.DataCollectionLayoutLocalServiceImpl" id="OSPIcecap.service.DataCollectionLayoutLocalService" />
+	<bean class="OSPIcecap.service.impl.DataCollectionLayoutServiceImpl" id="OSPIcecap.service.DataCollectionLayoutService" />
+	<bean class="OSPIcecap.service.persistence.impl.DataCollectionLayoutPersistenceImpl" id="OSPIcecap.service.persistence.DataCollectionLayoutPersistence" parent="basePersistence" />
+	<bean class="OSPIcecap.service.impl.DataEntryLocalServiceImpl" id="OSPIcecap.service.DataEntryLocalService" />
+	<bean class="OSPIcecap.service.impl.DataEntryServiceImpl" id="OSPIcecap.service.DataEntryService" />
+	<bean class="OSPIcecap.service.persistence.impl.DataEntryPersistenceImpl" id="OSPIcecap.service.persistence.DataEntryPersistence" parent="basePersistence" />
+	<bean class="OSPIcecap.service.impl.DataTypeLocalServiceImpl" id="OSPIcecap.service.DataTypeLocalService" />
+	<bean class="OSPIcecap.service.impl.DataTypeServiceImpl" id="OSPIcecap.service.DataTypeService" />
+	<bean class="OSPIcecap.service.persistence.impl.DataTypePersistenceImpl" id="OSPIcecap.service.persistence.DataTypePersistence" parent="basePersistence" />
+	<bean class="OSPIcecap.service.impl.DataTypeAnalyzerLinkLocalServiceImpl" id="OSPIcecap.service.DataTypeAnalyzerLinkLocalService" />
+	<bean class="OSPIcecap.service.impl.DataTypeAnalyzerLinkServiceImpl" id="OSPIcecap.service.DataTypeAnalyzerLinkService" />
+	<bean class="OSPIcecap.service.persistence.impl.DataTypeAnalyzerLinkPersistenceImpl" id="OSPIcecap.service.persistence.DataTypeAnalyzerLinkPersistence" parent="basePersistence" />
+	<bean class="OSPIcecap.service.impl.DataTypeStructureLocalServiceImpl" id="OSPIcecap.service.DataTypeStructureLocalService" />
+	<bean class="OSPIcecap.service.impl.DataTypeStructureServiceImpl" id="OSPIcecap.service.DataTypeStructureService" />
+	<bean class="OSPIcecap.service.persistence.impl.DataTypeStructurePersistenceImpl" id="OSPIcecap.service.persistence.DataTypeStructurePersistence" parent="basePersistence" />
+</beans>

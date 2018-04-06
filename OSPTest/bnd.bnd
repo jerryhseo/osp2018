@@ -1,0 +1,4 @@
+Bundle-Name: OSPTest
+Bundle-SymbolicName: OSPTest
+Bundle-Version: 1.0.0
+Export-Package: OSPTest.constants

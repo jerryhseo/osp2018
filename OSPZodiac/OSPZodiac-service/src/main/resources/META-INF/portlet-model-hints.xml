@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.kisti.osp.zodiac.model.Simulation">
+		<field name="uuid" type="String" />
+		<field name="simulationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field localized="true" name="title" type="String" />
+		<field name="webContentId" type="long" />
+		<field name="iconId" type="long" />
+		<field name="simulationStatus" type="String" />
+		<field name="status" type="int" />
+		<field name="tasks" type="String" />
+	</model>
+</model-hints>

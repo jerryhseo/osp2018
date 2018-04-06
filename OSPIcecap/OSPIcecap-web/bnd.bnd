@@ -1,0 +1,4 @@
+Bundle-Name: OSPIcecap-web
+Bundle-SymbolicName: com.kisti.osp.icecap.web
+Bundle-Version: 1.0.0
+Export-Package: com.kisti.osp.icecap.web.constants

@@ -1,0 +1,9 @@
+Bundle-Name: OSPIgloo-api
+Bundle-SymbolicName: com.kisti.osp.igloo.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.kisti.osp.igloo.exception,\
+	com.kisti.osp.igloo.model,\
+	com.kisti.osp.igloo.service,\
+	com.kisti.osp.igloo.service.persistence
+-includeresource: META-INF/service.xml=../OSPIgloo-service/service.xml

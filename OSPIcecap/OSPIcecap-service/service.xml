@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd">
+
+<service-builder package-path="OSPIcecap">
+	<author>Jerry H. Seo</author>
+	<namespace>icecap</namespace>
+	
+	<!--  DataType: type of data -->
+    <entity name="DataType" local-service="true" uuid="true"  remote-service="true" uuid-accessor="true">
+		<!-- PK fields -->
+		<column name="typeId" primary="true" type="long"></column>
+        
+		<!-- Group instance -->
+
+		<!-- Audit fields -->
+		
+		<column name="name" type="String" primary="false"></column>
+		<column name="version" type="String" primary="false"></column>
+		<column name="companyId" type="long"></column>
+        <column name="groupId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="createDate" type="Date"></column>
+        <column name="modifiedDate" type="Date"></column>
+
+		<column name="samplePath" type="String"></column>
+        <column name="status" type="int"></column>
+        <column name="description" type="String" localized="true"></column>
+        
+        
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="UserId" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+        </finder>
+       <finder name="Name" return-type="Collection" unique="false">
+            <finder-column name="name"></finder-column>
+        </finder>
+        <finder name="Name_U" return-type="Collection" unique="false">
+        	<finder-column name="userId"></finder-column>
+            <finder-column name="name"></finder-column>
+        </finder>
+        <finder name="Name_G" return-type="Collection" unique="false">
+        	<finder-column name="groupId"></finder-column>
+            <finder-column name="name"></finder-column>
+        </finder>
+        <finder name="Name_G_U" return-type="Collection" unique="false">
+        	<finder-column name="groupId"></finder-column>
+        	<finder-column name="userId"></finder-column>
+            <finder-column name="name"></finder-column>
+        </finder>
+        <finder name="Status" return-type="Collection">
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="Status_U" return-type="Collection">
+        	<finder-column name="userId"></finder-column>
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="Status_G" return-type="Collection">
+        	<finder-column name="groupId"></finder-column>
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="Status_G_U" return-type="Collection">
+        	<finder-column name="groupId"></finder-column>
+        	<finder-column name="userId"></finder-column>
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="NameVersion" return-type="DataType">
+            <finder-column name="name"></finder-column>
+            <finder-column name="version"></finder-column>
+        </finder>
+	</entity>
+	
+	<!--  DataTypeStructure: internal structure of data type -->
+    <entity name="DataTypeStructure" local-service="true" remote-service="true">
+        <column name="typeId" primary="true" type="long" convert-null="false" lazy="false" json-enabled="true"></column>
+        <column name="structure" type="String"></column><!--  typeContent: JSON -->
+	</entity>
+	
+	<!-- DataSet (Collection): instances of a certain dataType -->
+    <entity name="DataCollection" local-service="true" remote-service="true" uuid="true" uuid-accessor="true">
+
+		<!-- PK fields -->
+
+		<!-- Group instance -->
+        <column name="name" primary="false" type="String"></column>
+        <column name="version" primary="false" type="String"></column>
+
+		<column name="title" type="String" localized="true" />
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="description" type="long"/>
+
+		<!-- Order -->
+        <column name="status" type="int"></column>
+        <column name="accessMethod" type="String"></column>
+        <column name="collectionId" primary="true" type="long"></column>
+        <column name="typeId" type="long"></column>
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+        <finder name="UserId" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="Name" return-type="Collection">
+            <finder-column name="name"></finder-column>
+        </finder>
+        <finder name="Name_U" return-type="Collection">
+        	<finder-column name="userId"></finder-column>
+            <finder-column name="name"></finder-column>
+        </finder>
+        <finder name="Name_G" return-type="Collection">
+        	<finder-column name="groupId"></finder-column>
+            <finder-column name="name"></finder-column>
+        </finder>
+        <finder name="Name_G_U" return-type="Collection">
+        	<finder-column name="groupId"></finder-column>
+        	<finder-column name="userId"></finder-column>
+            <finder-column name="name"></finder-column>
+        </finder>
+        <finder name="NameVersion" return-type="Collection">
+            <finder-column name="name"></finder-column>
+            <finder-column name="version"></finder-column>
+        </finder>
+		<finder name="Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="Status_U" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+			<finder-column name="status" />
+		</finder>
+		<finder name="Status_G" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="status" />
+		</finder>
+		<finder name="Status_G_U" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="userId"></finder-column>
+			<finder-column name="status" />
+		</finder>
+        <finder name="TypeID" return-type="Collection">
+            <finder-column name="typeId"></finder-column>
+        </finder>
+        <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetTag" />
+	</entity>
+	
+	<!--  DataEntry: an element in DataSet -->
+    <entity name="DataEntry" local-service="true" remote-service="true">
+    	<column name="entryId" type="long" primary="true"></column>
+    	<column name="collectionId" type="long"></column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="createDate" type="Date"></column>
+        <column name="comments" type="String" localized="true"></column>
+       
+        
+        <finder name="CollectionID" return-type="Collection" unique="false">
+            <finder-column name="collectionId"></finder-column>
+        </finder>
+    </entity>
+
+	<entity name="DataTypeAnalyzerLink" local-service="true" remote-service="true">
+		<column name="linkId" type="long" primary="true"></column>
+		<!-- Foreign keys -->
+		<column name="typeId" type="long"></column>
+		
+		<!-- Actually this is a science app id which type is one of ANALYZER, VIEWER OR EDITOR -->
+		<column name="analyzerId" type="long" primary="true"></column>
+        <finder name="Analyzer" return-type="Collection">
+            <finder-column name="analyzerId"></finder-column>
+        </finder>
+        <finder name="TypeID" return-type="Collection" unique="false">
+            <finder-column name="typeId"></finder-column>
+        </finder>
+	</entity>
+	
+    <entity name="DataCollectionLayout" local-service="true">
+        <column name="collectionId" primary="true" type="long"></column>
+        <column name="layout" type="String"></column>
+    </entity>
+</service-builder>

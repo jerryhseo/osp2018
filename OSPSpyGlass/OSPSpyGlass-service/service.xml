@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd">
+
+<service-builder package-path="com.kisti.osp.spyglass">
+	<author>Jerry H. Seo</author>
+	<namespace>spyglass</namespace>
+	
+	<entity name="ScienceApp" local-service="true" uuid="true"  remote-service="true">
+        <column name="scienceAppId" type="long" primary="true"></column>
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+        <column name="name" type="String" ></column>
+
+		<!--
+			Version of the science app. It should be composed in 3 sections distinguished by comma.
+			Values of each section are integers. 
+			 Major section number may be increased when the structure of the science app changed.
+			 Minor section number may be increased when functions of the science app changed or upgraded.
+			 Fix section number may be increased when errors of the science app fixed.
+			 All section numbers cannot be decreased.
+		 -->
+        <column name="version" type="String" ></column>
+        
+        <!--
+        	Short description for the science app. Limited to 128*4 bytes in UTF-8 encoding.  
+         -->
+        <column name="title" type="String" localized="true"></column>
+
+		<!--
+			Stored web content id which describes the science app
+		 -->        
+        <column name="description" type="String" localized="true"></column>
+        
+        <!--
+			Stored web content id which describes the version history of the science app.
+		 -->        
+        <column name="previousVersionId" type="long" ></column>
+
+		<!--
+			Stored icon id representing the science app. 
+		 -->        
+        <column name="iconId" type="long"></column>
+
+		<!--
+			Stored Document & Media id of the science app. If the manual is consist of Web Contents,
+			id of the index web content would be stored.  
+		 -->
+        <column name="manual" type="String" localized="true"></column>
+        
+        <!--
+        	Binary file name to run the science app.
+        	Full path is generated automatically in ScienceAppLocalService. 
+         -->
+        <column name="exeFileName" type="String"></column>
+        
+        <!--
+        	Science app type. Should be one of the followings:
+        	SOLVER, CONVERTER, EDITOR, VIEWER, ANALYZER,
+        	DYNAMIC_SOLVER(for the future), DYNAMIC_CONVERTER(for the future)
+         -->
+        <column name="appType" type="String"></column>
+        
+        <!--
+        	Science app running type. Should be one of the following:
+        	SEQUENTIAL, MPI, INTEL_MPI, OPEN_MPI, OPEN_MP, ....  
+         -->
+        <column name="runType" type="String"></column>
+        
+        <!--
+        	Science app stage. Should be one of the folowings:
+        		GENERAL_INFO_READY, 
+        		INPUT_PORT_READY, 
+        		OUTPUT_PORT_READY, EXECUTION_INFO_READY, 
+        		TEST_OK, 
+        		REQUEST_TO_SERVICE, 
+        		ACTIVATED, 
+        		DEACTIVATED 
+         -->
+        <column name="openStatus" type="String"></column>
+        
+        <!--
+        	Status for Asset Publisher 
+         -->
+        <column name="status" type="int"></column>
+        
+        <!--
+        	The user id who modified the science app recently. 
+         -->
+        <column name="recentModifierId" type="long"></column>
+        
+        <!--
+        	Parallel module name when runType is SOLVER_PARALLEL 
+         -->
+        <column name="maxCpus" type="int"></column>
+        <column name="defaultCpus" type="int"></column>
+        
+		<column name="statusDate" type="Date" />
+		
+        <column name="openLevel" type="int"></column>
+        <column name="license" type="String"></column>
+        <column name="srcFileName" type="String"></column>
+        
+        <!--  Default ordering -->
+       <order by="desc">
+            <order-column name="createDate" order-by="desc"></order-column>
+            <order-column name="version" order-by="desc"></order-column>
+        </order>
+        
+        <!-- Finders -->
+        <finder name="U" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="G" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="Name" return-type="Collection" unique="false">
+            <finder-column name="name"></finder-column>
+        </finder>
+        <finder name="AppType" return-type="Collection">
+            <finder-column name="appType"></finder-column>
+        </finder>
+        <finder name="AppType_U" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+            <finder-column name="appType"></finder-column>
+        </finder>
+        <finder name="AppType_G" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="appType"></finder-column>
+        </finder>
+        <finder name="AppType_G_U" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="userId"></finder-column>
+            <finder-column name="appType"></finder-column>
+        </finder>
+        <finder name="AppRunType" return-type="Collection">
+            <finder-column name="appType"></finder-column>
+            <finder-column name="runType"></finder-column>
+        </finder>
+        <finder name="AppRunType_U" return-type="Collection">
+        	<finder-column name="userId"></finder-column>
+            <finder-column name="appType"></finder-column>
+            <finder-column name="runType"></finder-column>
+        </finder>
+        <finder name="AppRunType_G" return-type="Collection">
+        	<finder-column name="groupId"></finder-column>
+            <finder-column name="appType"></finder-column>
+            <finder-column name="runType"></finder-column>
+        </finder>
+        <finder name="AppRunType_G_U" return-type="Collection">
+        	<finder-column name="groupId"></finder-column>
+        	<finder-column name="userId"></finder-column>
+            <finder-column name="appType"></finder-column>
+            <finder-column name="runType"></finder-column>
+        </finder>
+        <finder name="OpenStatus" return-type="Collection">
+            <finder-column name="openStatus"></finder-column>
+        </finder>
+        <finder name="OpenStatus_U" return-type="Collection">
+        	<finder-column name="userId"></finder-column>
+            <finder-column name="openStatus"></finder-column>
+        </finder>
+        <finder name="OpenStatus_G" return-type="Collection">
+        	<finder-column name="groupId"></finder-column>
+            <finder-column name="openStatus"></finder-column>
+        </finder>
+        <finder name="OpenStatus_G_U" return-type="Collection">
+        	<finder-column name="groupId"></finder-column>
+        	<finder-column name="userId"></finder-column>
+            <finder-column name="openStatus"></finder-column>
+        </finder>
+        <finder name="S" return-type="Collection">
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="U_S" return-type="Collection">
+        	<finder-column name="userId"></finder-column>
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="G_S" return-type="Collection">
+        	<finder-column name="groupId"></finder-column>
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="G_U_S" return-type="Collection">
+        	<finder-column name="groupId"></finder-column>
+        	<finder-column name="userId"></finder-column>
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="NameVersion" return-type="ScienceApp">
+            <finder-column name="name"></finder-column>
+            <finder-column name="version"></finder-column>
+        </finder>
+        <finder name="OpenLevel" return-type="Collection">
+            <finder-column name="openLevel"></finder-column>
+        </finder>
+        
+        <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetTag" />
+	</entity>
+	
+	<entity name="ScienceAppInputPorts" local-service="true" remote-service="false">
+		<column name="scienceAppId" type="long" primary="true"></column>
+		<column name="samplePath" type="String"></column>
+		<column name="inputPorts" type="String"></column>
+        <!--
+        	{
+        		{#port-name} : {
+	        		name:{#port-name},
+	        		mandatory:{#true-or-false},
+	        		port-type-id:{#port-type-id},
+	        		default-editor-id:{#editor-id},
+	        		order:{#order} //deprecated
+        		},
+        		............
+        	} 
+         -->
+	</entity>
+	
+	<entity name="ScienceAppOutputPorts" local-service="true" remote-service="false">
+		<column name="scienceAppId" type="long" primary="true"></column>
+		<column name="outputPorts" type="String"></column>
+        <!--
+        	{
+        		{#port-name} : {
+	        		name:{#port-name},
+	        		mandatory:{#true-or-false},
+	        		file-name:{#file-name},
+        			port-type-id:{#port-type-id},
+        			default-analyzer-id:{#analyzer-id}
+        		},
+        		............
+        	} 
+         -->
+	</entity>
+	
+	<entity name="ScienceAppLogPorts" local-service="true" remote-service="false">
+		<column name="scienceAppId" type="long" primary="true"></column>
+		<column name="logPorts" type="String"></column>
+	</entity>
+	
+	<entity name="ScienceAppLayout" local-service="true" remote-service="false">
+		<column name="scienceAppId" type="long" primary="true"></column>
+		<column name="layout" type="String"></column>
+	</entity>
+    <entity name="ScienceAppWorkflow" local-service="true" remote-service="false">
+        <column name="scienceAppId" type="long" primary="true"></column>
+        <column name="definition" type="String"></column>
+    </entity>
+	
+    <entity name="ScienceAppManager" local-service="true" remote-service="false">
+    	<!-- PK fields -->
+
+    	<column name="scienceAppManagerId" type="long" primary="true"></column>
+
+    	<!-- Group instance -->
+
+    	<!-- Audit fields -->
+    	<column name="userId" type="long"></column>
+    	<column name="createDate" type="Date"></column>
+    	
+    	<column name="scienceAppId"  type="long"></column>
+    	<column name="managerId" type="long"></column>
+    	
+        <finder name="AppId" return-type="Collection">
+            <finder-column name="scienceAppId"></finder-column>
+        </finder>
+        <finder name="ManagerId" return-type="Collection">
+            <finder-column name="managerId"></finder-column>
+        </finder>
+        <finder name="UserId" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+        </finder>
+    </entity>
+</service-builder>

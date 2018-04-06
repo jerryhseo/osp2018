@@ -1,0 +1,9 @@
+Bundle-Name: OSPIcecap-api
+Bundle-SymbolicName: OSPIcecap.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	OSPIcecap.exception,\
+	OSPIcecap.model,\
+	OSPIcecap.service,\
+	OSPIcecap.service.persistence
+-includeresource: META-INF/service.xml=../OSPIcecap-service/service.xml

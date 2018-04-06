@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean class="com.kisti.osp.spyglass.service.impl.ScienceAppLocalServiceImpl" id="com.kisti.osp.spyglass.service.ScienceAppLocalService" />
+	<bean class="com.kisti.osp.spyglass.service.impl.ScienceAppServiceImpl" id="com.kisti.osp.spyglass.service.ScienceAppService" />
+	<bean class="com.kisti.osp.spyglass.service.persistence.impl.ScienceAppPersistenceImpl" id="com.kisti.osp.spyglass.service.persistence.ScienceAppPersistence" parent="basePersistence" />
+	<bean class="com.kisti.osp.spyglass.service.impl.ScienceAppInputPortsLocalServiceImpl" id="com.kisti.osp.spyglass.service.ScienceAppInputPortsLocalService" />
+	<bean class="com.kisti.osp.spyglass.service.persistence.impl.ScienceAppInputPortsPersistenceImpl" id="com.kisti.osp.spyglass.service.persistence.ScienceAppInputPortsPersistence" parent="basePersistence" />
+	<bean class="com.kisti.osp.spyglass.service.impl.ScienceAppLayoutLocalServiceImpl" id="com.kisti.osp.spyglass.service.ScienceAppLayoutLocalService" />
+	<bean class="com.kisti.osp.spyglass.service.persistence.impl.ScienceAppLayoutPersistenceImpl" id="com.kisti.osp.spyglass.service.persistence.ScienceAppLayoutPersistence" parent="basePersistence" />
+	<bean class="com.kisti.osp.spyglass.service.impl.ScienceAppLogPortsLocalServiceImpl" id="com.kisti.osp.spyglass.service.ScienceAppLogPortsLocalService" />
+	<bean class="com.kisti.osp.spyglass.service.persistence.impl.ScienceAppLogPortsPersistenceImpl" id="com.kisti.osp.spyglass.service.persistence.ScienceAppLogPortsPersistence" parent="basePersistence" />
+	<bean class="com.kisti.osp.spyglass.service.impl.ScienceAppManagerLocalServiceImpl" id="com.kisti.osp.spyglass.service.ScienceAppManagerLocalService" />
+	<bean class="com.kisti.osp.spyglass.service.persistence.impl.ScienceAppManagerPersistenceImpl" id="com.kisti.osp.spyglass.service.persistence.ScienceAppManagerPersistence" parent="basePersistence" />
+	<bean class="com.kisti.osp.spyglass.service.impl.ScienceAppOutputPortsLocalServiceImpl" id="com.kisti.osp.spyglass.service.ScienceAppOutputPortsLocalService" />
+	<bean class="com.kisti.osp.spyglass.service.persistence.impl.ScienceAppOutputPortsPersistenceImpl" id="com.kisti.osp.spyglass.service.persistence.ScienceAppOutputPortsPersistence" parent="basePersistence" />
+	<bean class="com.kisti.osp.spyglass.service.impl.ScienceAppWorkflowLocalServiceImpl" id="com.kisti.osp.spyglass.service.ScienceAppWorkflowLocalService" />
+	<bean class="com.kisti.osp.spyglass.service.persistence.impl.ScienceAppWorkflowPersistenceImpl" id="com.kisti.osp.spyglass.service.persistence.ScienceAppWorkflowPersistence" parent="basePersistence" />
+</beans>

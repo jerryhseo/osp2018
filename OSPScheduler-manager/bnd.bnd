@@ -1,0 +1,6 @@
+Bundle-Name: OSP Scheduler Manager
+Bundle-SymbolicName: com.kisti.osp.icebreaker.scheduler.manager
+Bundle-Version: 1.0.0
+Export-Package: com.kisti.osp.icebreaker.scheduler.manager.constants
+
+-metatype: *

@@ -1,0 +1,10 @@
+create index IX_95288847 on zodiac_Simulation (groupId, simulationStatus[$COLUMN_LENGTH:75$]);
+create index IX_ED002020 on zodiac_Simulation (groupId, status);
+create index IX_5E72AC01 on zodiac_Simulation (groupId, userId, simulationStatus[$COLUMN_LENGTH:75$]);
+create index IX_9376C45A on zodiac_Simulation (groupId, userId, status);
+create index IX_11382FD on zodiac_Simulation (simulationStatus[$COLUMN_LENGTH:75$]);
+create index IX_A56CE656 on zodiac_Simulation (status);
+create index IX_7D6A90B7 on zodiac_Simulation (userId, simulationStatus[$COLUMN_LENGTH:75$]);
+create index IX_542CF490 on zodiac_Simulation (userId, status);
+create index IX_50D29D64 on zodiac_Simulation (uuid_[$COLUMN_LENGTH:75$], companyId);
+create unique index IX_F86B2CE6 on zodiac_Simulation (uuid_[$COLUMN_LENGTH:75$], groupId);

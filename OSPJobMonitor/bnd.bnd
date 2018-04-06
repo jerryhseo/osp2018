@@ -1,0 +1,4 @@
+Bundle-Name: OSP Job Monitor
+Bundle-SymbolicName: com.kisti.osp.icebreaker.job.monitor
+Bundle-Version: 1.0.0
+Export-Package: com.kisti.osp.icebreaker.job.monitor.constants

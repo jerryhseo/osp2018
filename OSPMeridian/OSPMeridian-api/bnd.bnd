@@ -1,0 +1,9 @@
+Bundle-Name: OSPMeridian-api
+Bundle-SymbolicName: com.kisti.osp.meridian.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.kisti.osp.meridian.exception,\
+	com.kisti.osp.meridian.model,\
+	com.kisti.osp.meridian.service,\
+	com.kisti.osp.meridian.service.persistence
+-includeresource: META-INF/service.xml=../OSPMeridian-service/service.xml

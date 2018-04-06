@@ -1,0 +1,4 @@
+Bundle-Name: OSPSpyGlass-web
+Bundle-SymbolicName: com.kisti.osp.spyglass.web
+Bundle-Version: 1.0.0
+Export-Package: com.kisti.osp.spyglass.web.constants
