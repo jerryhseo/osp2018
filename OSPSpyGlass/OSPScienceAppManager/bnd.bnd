@@ -1,6 +1,0 @@
-Bundle-Name: OSPScienceAppManager
-Bundle-SymbolicName: com.kisti.osp.spyglass.web.scienceappmanager
-Bundle-Version: 1.0.0
-Export-Package: \
-	com.kisti.osp.spyglass.web.scienceappmanager.constants,\
-	com.kisti.osp.spyglass.web.scienceappmanager.asset
