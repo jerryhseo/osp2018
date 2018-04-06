@@ -113,10 +113,10 @@
         </order>
         
         <!-- Finders -->
-        <finder name="U" return-type="Collection">
+        <finder name="UerId" return-type="Collection">
             <finder-column name="userId"></finder-column>
         </finder>
-        <finder name="G" return-type="Collection">
+        <finder name="GroupId" return-type="Collection">
             <finder-column name="groupId"></finder-column>
         </finder>
         <finder name="Name" return-type="Collection" unique="false">
@@ -137,6 +137,22 @@
             <finder-column name="groupId"></finder-column>
             <finder-column name="userId"></finder-column>
             <finder-column name="appType"></finder-column>
+        </finder>
+        <finder name="RunType" return-type="Collection">
+            <finder-column name="runType"></finder-column>
+        </finder>
+        <finder name="RunType_U" return-type="Collection">
+        	<finder-column name="userId"></finder-column>
+            <finder-column name="runType"></finder-column>
+        </finder>
+        <finder name="RunType_G" return-type="Collection">
+        	<finder-column name="groupId"></finder-column>
+            <finder-column name="runType"></finder-column>
+        </finder>
+        <finder name="RunType_G_U" return-type="Collection">
+        	<finder-column name="groupId"></finder-column>
+        	<finder-column name="userId"></finder-column>
+            <finder-column name="runType"></finder-column>
         </finder>
         <finder name="AppRunType" return-type="Collection">
             <finder-column name="appType"></finder-column>
@@ -174,18 +190,18 @@
         	<finder-column name="userId"></finder-column>
             <finder-column name="openStatus"></finder-column>
         </finder>
-        <finder name="S" return-type="Collection">
+        <finder name="Status" return-type="Collection">
             <finder-column name="status"></finder-column>
         </finder>
-        <finder name="U_S" return-type="Collection">
+        <finder name="Status_U" return-type="Collection">
         	<finder-column name="userId"></finder-column>
             <finder-column name="status"></finder-column>
         </finder>
-        <finder name="G_S" return-type="Collection">
+        <finder name="Status_G" return-type="Collection">
         	<finder-column name="groupId"></finder-column>
             <finder-column name="status"></finder-column>
         </finder>
-        <finder name="G_U_S" return-type="Collection">
+        <finder name="Status_G_U" return-type="Collection">
         	<finder-column name="groupId"></finder-column>
         	<finder-column name="userId"></finder-column>
             <finder-column name="status"></finder-column>
@@ -195,6 +211,19 @@
             <finder-column name="version"></finder-column>
         </finder>
         <finder name="OpenLevel" return-type="Collection">
+            <finder-column name="openLevel"></finder-column>
+        </finder>
+        <finder name="OpenLevel_U" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+            <finder-column name="openLevel"></finder-column>
+        </finder>
+        <finder name="OpenLevel_G" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="openLevel"></finder-column>
+        </finder>
+        <finder name="OpenLevel_G_U" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="userId"></finder-column>
             <finder-column name="openLevel"></finder-column>
         </finder>
         
@@ -247,7 +276,7 @@
 		<column name="scienceAppId" type="long" primary="true"></column>
 		<column name="layout" type="String"></column>
 	</entity>
-    <entity name="ScienceAppWorkflow" local-service="true" remote-service="false">
+    <entity name="Workflow" local-service="true" remote-service="false">
         <column name="scienceAppId" type="long" primary="true"></column>
         <column name="definition" type="String"></column>
     </entity>

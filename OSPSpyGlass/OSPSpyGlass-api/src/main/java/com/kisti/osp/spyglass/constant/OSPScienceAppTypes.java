@@ -9,15 +9,6 @@ public enum OSPScienceAppTypes {
 	AN("Analyzer"),
 	WF("Workflow");
 	
-	@Override
-	public String toString(){
-		return this.value;
-	}
-	
-	public boolean equal( String type ){
-		return this.value.equalsIgnoreCase(type);
-	}
-	
 	public String value(){
 		return this.value;
 	}

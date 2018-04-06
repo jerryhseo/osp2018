@@ -757,13 +757,13 @@ public class FileLocalServiceImpl extends FileLocalServiceBaseImpl {
     
     public Path getRepositoryPath( PortletRequest portletRequest, String path, OSPRepositoryTypes repoType ) throws PortalException{
     	Path targetPath;
-    	switch( repsystemoType ){
-    		case INPUT:{
+    	switch( repoType ){
+    		case USER_HOME:{
     			Path userHomePath = this.getUserHome(portletRequest, false);
     			targetPath = userHomePath.resolve(path);
     			break;
     		}
-    		case OUTPUT:{
+    		case USER_JOBS:{
     			Path userHomePath = this.getUserHome(portletRequest, true);
     			targetPath = userHomePath.resolve(path);
     			break;

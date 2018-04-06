@@ -10,21 +10,6 @@ public enum OSPScienceAppStatus {
 	PENDDING(6),
 	PUBLISHED(7);
 	
-	public String toString(){
-		switch( this ){
-			case INIT:	return "init";
-			case GENERAL:	return "general";
-			case EXCUTE:	return "execute";
-			case PORTS:	return "ports";
-			case LAYOUT:	return "layout";
-			case PUBLISH:	return "publish";
-			case PENDDING:	return "pending";
-			case PUBLISHED:	return "published";
-		}
-		
-		return "";
-	}
-	
 	public boolean equal( int type ){
 		return this.value == type; 
 	}

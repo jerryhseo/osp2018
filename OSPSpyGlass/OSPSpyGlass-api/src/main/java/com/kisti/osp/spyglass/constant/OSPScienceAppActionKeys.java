@@ -9,13 +9,8 @@ public enum OSPScienceAppActionKeys {
 	PUBLISH("PUBLISH"),
 	DOWNLOAD("DOWNLOAD");
 	
-	@Override
-	public String toString(){
-		return this.value;
-	}
-	
 	public boolean equal( String type ){
-		return this.value.equalsIgnoreCase(type);
+		return this.toString().equalsIgnoreCase(type);
 	}
 	
 	public String value(){
